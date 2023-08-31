@@ -1,6 +1,6 @@
 import { Form, FormContainer, Input, SendButton, StyledLabel, RegisterButton } from "./styled";
 
-function TelaLogin() {
+function TelaLogin({alterarTela}) {
   const login = () => {
     // validação de login ainda será visto mais pra frente no curso
     alert("Login bem sucedido, mas falta fazer a prática 3 e remover esse alerta")
@@ -23,9 +23,9 @@ function TelaLogin() {
           <Input type={"password"} />
         </StyledLabel>
 
-        <SendButton onClick={login}>Entrar</SendButton>
+        <SendButton onClick={ () => {alterarTela("principal")}}>Entrar</SendButton>
 
-        <RegisterButton onClick={mostrarTelaCadastro}>Cadastre-se</RegisterButton>
+        <RegisterButton onClick={() => {alterarTela("cadastro")}}>Cadastre-se</RegisterButton>
       </Form>
     </FormContainer>
   );
